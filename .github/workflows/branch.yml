@@ -16,15 +16,15 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
-            - uses: actions/setup-node@v3
+            - uses: actions/setup-node@v4
               with:
                   node-version: "18.12.1"
 
             - name: Get npm cache directory
               id: npm-cache-dir
-              run: echo "::set-output name=dir::$(npm config get cache)"
+              run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
 
             - name: Cache node modules
               id: npm-cache
@@ -49,7 +49,7 @@ jobs:
             # https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs
             - name: Archive web demo build
               if: success()
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: public
                   path: public # Directory to push to GitHub Pages

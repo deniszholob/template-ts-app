@@ -19,7 +19,8 @@
 - Push code to github
 - Enable pages deployment
   - Go to repo settings for Pages: https://github.com/deniszholob/template-ts-app/settings/pages
-  - Under "Branch" dropdown chose "gh-pages" clicks save
+  - Under `Source` dropdown select `Deploy from branch`
+  - Under `Branch` dropdown select `gh-pages` clicks save
 - Add url to About section
   - On the main repo code page
   - Under About settings on the right, click the gear icon
